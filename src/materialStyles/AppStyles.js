@@ -1,8 +1,12 @@
 import { makeStyles } from "@material-ui/core";
 
 const AppStyles = makeStyles((theme) => ({
-  leftColumn: {
+  container: {
     marginTop: 60,
+  },
+
+  containerSmall: {
+    marginTop: 10,
   },
 
   rightColumn: {
@@ -11,6 +15,13 @@ const AppStyles = makeStyles((theme) => ({
     right: 0,
     top: 70,
   },
+
+  rightColumnSmall: {
+    position: "fixed",
+    width: "100%",
+    left: 0,
+    bottom: 0,
+  }
 }));
 
 export default AppStyles;
