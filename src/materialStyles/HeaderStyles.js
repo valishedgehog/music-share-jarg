@@ -1,9 +1,9 @@
 import { makeStyles } from "@material-ui/core";
 
-const headerStyles = makeStyles((theme) => ({
+const HeaderStyles = makeStyles((theme) => ({
   title: {
     marginLeft: theme.spacing(2),
   },
 }));
 
-export default headerStyles;
+export default HeaderStyles;

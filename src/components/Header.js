@@ -1,10 +1,10 @@
 import React from "react";
 import { AppBar, Toolbar, Typography } from "@material-ui/core";
 import { HeadsetRounded } from "@material-ui/icons";
-import headerStyles from "../materialStyles/HeaderStyles";
+import HeaderStyles from "../materialStyles/HeaderStyles";
 
 function Header() {
-  const classes = headerStyles();
+  const classes = HeaderStyles();
 
   return (
     <AppBar color="primary" position="fixed">
