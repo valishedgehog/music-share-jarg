@@ -13,17 +13,13 @@ import {
   SongItemStyles,
 } from "../materialStyles/SongListStyles";
 import { PlayArrow, Save } from "@material-ui/icons";
+import { useSubscription } from "@apollo/react-hooks";
+import { GET_SONGS_SUB } from "../graphql/subscriptions";
 
 function SongList() {
+  const { data, loading, error } = useSubscription(GET_SONGS_SUB);
   const classes = SongListStyles();
 
-  const song = {
-    title: "Hello",
-    author: "World",
-    thumbnail: "https://i1.sndcdn.com/avatars-000355550567-5e42tb-t500x500.jpg",
-  };
-
-  let loading = false;
   if (loading) {
     return (
       <div className={classes.loadingProgress}>
@@ -32,10 +28,12 @@ function SongList() {
     );
   }
 
+  if (error) return <div>Error fetching songs</div>;
+
   return (
     <div>
-      {Array.from({ length: 10 }, () => song).map((song, i) => (
-        <SongItem key={i} song={song} />
+      {data.songs.map((song) => (
+        <SongItem key={song.id} song={song} />
       ))}
     </div>
   );
