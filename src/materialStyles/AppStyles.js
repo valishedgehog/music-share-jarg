@@ -6,7 +6,7 @@ const AppStyles = makeStyles((theme) => ({
   },
 
   containerSmall: {
-    marginTop: 10,
+    marginTop: 0,
   },
 
   rightColumn: {
@@ -21,7 +21,11 @@ const AppStyles = makeStyles((theme) => ({
     width: "100%",
     left: 0,
     bottom: 0,
-  }
+  },
+
+  marginBottom: {
+    marginBottom: 100,
+  },
 }));
 
 export default AppStyles;
